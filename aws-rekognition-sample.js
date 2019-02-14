@@ -9,6 +9,14 @@ exports.handler = function (event, context, callback) {
     let responseCode = 200;
     let photoPath = '';
     let name = '';
+    
+    if (event.queryStringParameters !== null && event.queryStringParameters !== undefined) {
+        if (event.queryStringParameters.username !== undefined &&
+            event.queryStringParameters.username !== null &&
+            event.queryStringParameters.username !== "") {
+            name = event.queryStringParameters.username;
+        }
+    }
 
 
 
